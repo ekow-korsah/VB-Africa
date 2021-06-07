@@ -1,0 +1,467 @@
+$color-primary: #192965;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7790;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-gray-light-1: #f7f7f7;
+$color-gray-dark: #777;
+$color-gray-light-3: #eee;
+$color-gray-dark-2: #999;
+$color-gray-dark-4: #333;
+
+$color-white: #fff;
+$color-black: #0000;
+
+// font
+$default-font-size: 1.6rem;
+
+// Grid
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+@mixin respond-phone {
+  @media only screen and (max-width: 37.5em) {
+    @content;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if$breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+
+  @if$breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+
+  @if$breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+
+  @if$breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      //1800em
+      @content;
+    }
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0rem;
+  font-family: "Popins";
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.navbar {
+  background-color: #192965;
+  border: none;
+  font-size: 1.5rem;
+  padding: 0 3rem;
+}
+
+.header {
+  border: none;
+  margin-top: -0.3rem;
+  height: 85vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary, 0.8),
+      rgba($color-primary, 0.8)
+    ),
+    url(../img/Background.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  color: white;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em) {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary, 1),
+        rgba($color-primary, 0.9)
+      ),
+      url(../img/Background.jpg);
+  }
+
+  @include respond(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.heading {
+  &__primary {
+    font-size: 3rem;
+
+    @include respond(phone) {
+      font-size: 2.2rem;
+    }
+  }
+
+  // @include respond(tab-port) {
+  //   margin-left: 0;
+  // }
+}
+// Button
+.btn {
+  &,
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2rem 5rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+
+    // Change for the new button element
+    border: none;
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-gray-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s ease;
+  }
+}
+
+// Section
+.section-about {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.about-secondary {
+  border-bottom: 5px solid $color-primary;
+}
+
+.about {
+  text-align: center;
+}
+
+.paragraph {
+  margin: 0 15rem;
+  font-size: 2rem;
+
+  @include respond(phone) {
+    margin: 0 5rem;
+    font-size: 2rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-primary, $color-primary);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  color: transparent;
+  // letter-spacing: 0.2rem;
+  transition: all 0.2s ease-in;
+  text-align: center;
+
+  @include respond(phone) {
+    font-size: 2rem;
+  }
+}
+
+.head {
+  text-align: center;
+  margin-left: 35rem;
+  margin-bottom: 4rem;
+
+  @include respond(tab-port) {
+    margin-left: 0;
+  }
+
+  @include respond(phone) {
+    margin-left: 0;
+  }
+}
+
+// Offers Section
+.offer-area {
+  text-align: center;
+  margin-top: 12rem;
+  padding: 5rem 0;
+
+  @include respond(phone) {
+    margin-top: -1rem;
+  }
+}
+
+.offer {
+  margin: 2rem 10rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem;
+
+  @include respond(phone) {
+    margin: 2rem 13rem;
+  }
+
+  &__item {
+    margin-bottom: 5rem;
+    width: 30%;
+  }
+
+  &__icon {
+    margin-left: 7rem;
+  }
+
+  &__paragraph {
+    text-align: center;
+    font-size: 1.5rem;
+    width: 20rem;
+  }
+}
+
+// Story Area
+.story {
+  width: 750px;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.5);
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+
+    -wekit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
+  }
+
+  &__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
+  }
+
+  &__text {
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+}
+
+.section-stories {
+  position: relative;
+  padding: 10rem 0;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.2;
+
+  &__content {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.bottom {
+  margin-bottom: 2rem;
+}
+
+// Footer
+.footer {
+  background-color: $color-primary;
+  grid-column: full-start / full-end;
+  //   margin-top: 5rem;
+  padding: 8rem;
+}
+
+.nav {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
+  align-items: center;
+
+  &__link:link,
+  &__link:visited {
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem;
+    text-align: center;
+    display: block;
+    transition: all 0.2s;
+  }
+
+  &__link::hover,
+  &__link:active {
+    background-color: rgba(#fff, 0.5);
+    transform: translateY(-3px);
+  }
+}
+
+.copyright {
+  font-size: 1.4rem;
+  color: white;
+  margin-top: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  width: 76%;
+}
+
+.footer-logo {
+  margin-left: 47%;
+
+  @include respond(phone) {
+    margin: 30%;
+  }
+}
