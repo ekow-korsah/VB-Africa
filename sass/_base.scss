@@ -79,7 +79,7 @@ html {
 body {
   box-sizing: border-box;
   padding: 0rem;
-  font-family: "Popins";
+  font-family: "Mate SC";
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -229,7 +229,7 @@ body {
 }
 
 .paragraph {
-  margin: 0 15rem;
+  margin: 0 25rem;
   font-size: 2rem;
 
   @include respond(phone) {
@@ -256,9 +256,13 @@ body {
   }
 }
 
+.cent {
+  text-align: center;
+}
+
 .head {
   text-align: center;
-  margin-left: 35rem;
+  // margin-left: 35rem;
   margin-bottom: 4rem;
 
   @include respond(tab-port) {
@@ -288,7 +292,7 @@ body {
   grid-gap: 7rem;
 
   @include respond(phone) {
-    margin: 2rem 13rem;
+    margin: 2rem 11rem;
   }
 
   &__item {
