@@ -79,9 +79,10 @@ html {
 body {
   box-sizing: border-box;
   padding: 0rem;
-  font-family: "Geometria";
+  font-family: "Ubuntu";
   max-width: 100%;
   overflow-x: hidden;
+  padding: 2rem;
 }
 
 .navbar {
@@ -233,7 +234,7 @@ body {
   font-size: 2rem;
   text-align: left;
   margin-left: -2rem;
-  font-family: "Geometria";
+  font-family: "Ubuntu";
   width: 100%;
 
   @include respond(tab-port) {
@@ -302,7 +303,7 @@ body {
 .offer {
   margin: 2rem 10rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 7rem;
 
   @include respond(phone) {
@@ -322,6 +323,7 @@ body {
     text-align: center;
     font-size: 1.5rem;
     width: 20rem;
+    font-family: "Ubuntu";
   }
 }
 
@@ -334,7 +336,8 @@ body {
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
-  font-size: $default-font-size;
+  font-family: "Ubuntu";
+  font-size: 1.6rem;
   transform: skewX(-12deg);
 
   @include respond(tab-port) {
@@ -371,6 +374,7 @@ body {
   }
 
   &__text {
+    font-family: "Ubuntu";
     @include respond(phone) {
       transform: skewX(0);
     }

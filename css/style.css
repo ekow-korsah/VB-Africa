@@ -13,9 +13,10 @@ html {
 body {
   box-sizing: border-box;
   padding: 0rem;
-  font-family: "Geometria";
+  font-family: "Ubuntu";
   max-width: 100%;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  padding: 2rem; }
 
 .navbar {
   background-color: #192965;
@@ -117,7 +118,7 @@ body {
   font-size: 2rem;
   text-align: left;
   margin-left: -2rem;
-  font-family: "Geometria";
+  font-family: "Ubuntu";
   width: 100%; }
   @media only screen and (max-width: 56.25em) {
     .paragraph {
@@ -171,7 +172,7 @@ body {
 .offer {
   margin: 2rem 10rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   grid-gap: 7rem; }
   @media only screen and (max-width: 37.5em) {
     .offer {
@@ -184,7 +185,8 @@ body {
   .offer__paragraph {
     text-align: center;
     font-size: 1.5rem;
-    width: 20rem; }
+    width: 20rem;
+    font-family: "Ubuntu"; }
 
 .story {
   width: 750px;
@@ -194,6 +196,7 @@ body {
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
+  font-family: "Ubuntu";
   font-size: 1.6rem;
   transform: skewX(-12deg); }
   @media only screen and (max-width: 56.25em) {
@@ -221,9 +224,11 @@ body {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     transition: all 0.5s; }
-  @media only screen and (max-width: 37.5em) {
-    .story__text {
-      transform: skewX(0); } }
+  .story__text {
+    font-family: "Ubuntu"; }
+    @media only screen and (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
