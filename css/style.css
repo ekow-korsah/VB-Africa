@@ -14,13 +14,12 @@ body {
   box-sizing: border-box;
   font-family: "Ubuntu";
   max-width: 100%;
-  overflow-x: hidden;
-  padding: 0 2rem; }
+  overflow-x: hidden; }
 
 .navbar {
   background-color: #192965;
   border: none;
-  font-size: 1.7rem;
+  font-size: 2rem;
   padding: 0 3rem; }
 
 .header {
@@ -273,6 +272,7 @@ body {
 .footer {
   background-color: #192965;
   grid-column: full-start / full-end;
+  font-family: "Ubuntu";
   padding: 8rem; }
 
 .nav {
@@ -280,7 +280,8 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 2rem;
-  align-items: center; }
+  align-items: center;
+  font-family: "Ubuntu"; }
   .nav__link:link, .nav__link:visited {
     color: white;
     font-size: 1.4rem;
@@ -288,6 +289,7 @@ body {
     text-transform: uppercase;
     padding: 1.5rem;
     text-align: center;
+    font-family: "Ubuntu";
     display: block;
     transition: all 0.2s; }
   .nav__link::hover, .nav__link:active {
@@ -301,7 +303,8 @@ body {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  width: 76%; }
+  width: 76%;
+  font-family: "Ubuntu" !important; }
 
 .footer-logo {
   margin-left: 47%; }
@@ -356,9 +359,9 @@ body {
     transform: scale(0.95); }
 
 .section-about {
-  background-color: #f7f7f7;
   padding: 25rem 0;
-  margin-top: -20vh; }
+  margin-top: -20vh;
+  margin-bottom: -15rem; }
   @media only screen and (max-width: 56.25em) {
     .section-about {
       padding: 20rem 0; } }
@@ -401,3 +404,6 @@ body {
     @media only screen and (max-width: 56.25em) {
       .row [class^="col-"] {
         width: 100% !important; } }
+
+.main {
+  padding: 0 2rem; }
