@@ -91,6 +91,13 @@ body {
   padding: 0 3rem;
 }
 
+.navhead {
+  @include respond(phone) {
+    background-color: transparent !important;
+    margin-left: -2rem;
+  }
+}
+
 .header {
   border: none;
   margin-top: -0.3rem;
@@ -295,7 +302,7 @@ body {
   padding: 5rem 0;
 
   @include respond(phone) {
-    margin-top: -1rem;
+    margin-top: -18rem;
   }
 }
 
@@ -306,7 +313,7 @@ body {
   grid-gap: 7rem;
 
   @include respond(phone) {
-    margin: 2rem 11rem;
+    margin: 2rem 6.5rem;
   }
 
   &__item {
@@ -457,7 +464,7 @@ body {
     color: white;
     font-size: 1.4rem;
     text-decoration: none;
-    text-transform: uppercase;
+    // text-transform: uppercase;
     padding: 1.5rem;
     text-align: center;
     font-family: "Ubuntu";
