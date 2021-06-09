@@ -91,10 +91,14 @@ body {
   padding: 0 3rem;
 }
 
+.nav-item {
+  margin-left: 5rem;
+}
+
 .navhead {
   @include respond(phone) {
     background-color: transparent !important;
-    margin-left: -2rem;
+    margin-left: 3rem;
   }
 }
 
